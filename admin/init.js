@@ -1,6 +1,8 @@
+// admin/init.js
 (function boot() {
-  if (window.CMS && CMS.init) {
-    CMS.init({ config: '/admin/config.yml' });  // <-- note the leading slash
+  if (window.CMS && typeof CMS.init === 'function') {
+    CMS.init({ config: '/admin/config.yml' });
+    console.log('[decap] CMS.init called');
   } else {
     setTimeout(boot, 50);
   }
